@@ -13,7 +13,7 @@ module AhoyAdmin
       result = "".html_safe
       result += content_tag(:div, "", id: chart_id)
       result +=
-        nonced_javascript_tag do
+        javascript_tag nonce: true do
           <<-JS.html_safe
         (function(o){
           o.id = "#{chart_id}"
